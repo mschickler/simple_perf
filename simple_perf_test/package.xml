@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>simple_perf_test</name>
+  <version>1.0.0</version>
+  <description>
+    This package contains simple code to be used for measuring performance
+    characteristics of ROS such as pub/sub latency.
+  </description>
+
+  <maintainer email="mschickler@gmail.com">Matt Schickler</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>simple_perf_test_msgs</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>
+
