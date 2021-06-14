@@ -2,9 +2,9 @@
 #define SIMPLE_PERF_TEST_PROBE_COMPONENT_H_
 
 #include <rclcpp/rclcpp.hpp>
-#include <simple_perf_test_msgs/msg/probe.hpp>
+#include <simple_perf_test_msgs/msg/probe1m.hpp>
 
-using ProbeMsg = simple_perf_test_msgs::msg::Probe;
+using ProbeMsg = simple_perf_test_msgs::msg::Probe1m;
 
 namespace simple_perf_test
 {

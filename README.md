@@ -1,10 +1,14 @@
 This code implements the simplest of latency tests between a publisher and a subscriber.
 
-Since the unique_ptr publish interface is used and the nodes are components
-running in the same process, in theory the communications should occur with zero
-copies.  However, the test result appears to indicate that a copy occurred
-(i.e. the address of the underlying message received by the subscriber is changed).
+The publisher uses loaned message buffers to take advantage of zero copy shared memory communications with the subscriber that is running in a different process.
 
-After building the two packages, run the test:
+Make a workspace directory and clone this repo into it.
 
-ros2 run simple_perf_test combined_node
+Then run "colcon build".
+
+Finally, run the following commands in separate terminal windows from the workspace directory:
+
+RMW_IMPLEMENTATION=rmw_fastrtps_cpp ros2 run simple_perf_test target 
+
+RMW_IMPLEMENTATION=rmw_fastrtps_cpp FASTRTPS_DEFAULT_PROFILES_FILE=./simple_perf/simple_perf_test/profile/shm_profile.xml ros2 run simple_perf_test probe
+

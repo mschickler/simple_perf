@@ -15,6 +15,10 @@ endforeach()
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   msg/Probe.msg
+  msg/Probe1k.msg
+  msg/Probe10k.msg
+  msg/Probe100k.msg
+  msg/Probe1m.msg
   DEPENDENCIES ${DEPS}
 )
 

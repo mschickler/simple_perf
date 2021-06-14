@@ -26,7 +26,7 @@ void TargetComponent::onProbe(const ProbeMsg::SharedPtr msg)
     uint64_t t2 = std::chrono::high_resolution_clock::now().time_since_epoch().count();
 
     // Confirm sequence number
-    RCLCPP_INFO(get_logger(), "Received probe with sequence number %d", msg->sequence);
+//    RCLCPP_INFO(get_logger(), "Received probe with sequence number %ld", msg->sequence);
 
     // Verify original message pointer was passed in intra-process case
     RCLCPP_INFO(get_logger(), "Received message has address 0x%lx", reinterpret_cast<unsigned long int>(msg.get()));
